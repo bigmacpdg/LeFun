@@ -49,18 +49,16 @@ extern int yydebug;
 # define YYTOKENTYPE
   enum yytokentype
   {
-    ENTIER = 258,
+    VALEUR = 258,
     PLUS = 259,
     FOIS = 260,
     MOINS = 261,
     DIVISE = 262,
     OUVRIR = 263,
     FERMER = 264,
-    NOUVELLE_LIGNE = 265,
-    FLOTTANT = 266,
-    IDENT = 267,
-    FIN = 268,
-    DEBUT = 269
+    IDENT = 265,
+    FIN = 266,
+    DEBUT = 267
   };
 #endif
 

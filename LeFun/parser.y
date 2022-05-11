@@ -8,15 +8,13 @@ int yyerror(char *message_erreur);
 
 //on rappelle les symboles terminaux
 
-%token ENTIER
+%token VALEUR
 %token PLUS
 %token FOIS
 %token MOINS
 %token DIVISE
 %token OUVRIR
 %token FERMER 
-%token NOUVELLE_LIGNE
-%token FLOTTANT
 %token IDENT
 %token FIN
 %token DEBUT
@@ -27,9 +25,9 @@ int yyerror(char *message_erreur);
 %%  //Régles syntaxiques/grammaticales
 
 programme : DEBUT instruction_liste FIN
-instruction_liste :  instruction_liste instruction| instruction
-instruction : IDENT assign expression NOUVELLE_LIGNE
-expression : ENTIER | FLOTTANT |somme  | multiplication | division | soustraction | paren
+instruction_liste :  instruction_liste instruction | instruction
+instruction : IDENT assign expression
+expression : VALEUR |somme  | multiplication | division | soustraction | paren
 somme : expression PLUS expression {$$ = $1+$3;}
 soustraction : expression MOINS expression {$$ = $1-$3;}
 multiplication : expression FOIS expression {$$=$1*$3;}
