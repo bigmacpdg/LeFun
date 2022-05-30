@@ -23,6 +23,7 @@ int yylex();
 %token <fn> FUNC
 %token FDL FDS
 %token IF THEN ELSE WHILE DO 
+%token BEG END
 %nonassoc <fn> CMP
 %right '='
 %left <fn> OP
@@ -32,6 +33,7 @@ int yylex();
 %start calclist
 
 %%
+
 
 stmt: IF exp THEN list  { $$ = newflow('I', $2, $4, NULL); }
  | IF exp THEN list ELSE list  { $$ = newflow('I', $2, $4, $6); }

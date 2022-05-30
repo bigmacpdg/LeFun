@@ -59,8 +59,10 @@ extern int yydebug;
     ELSE = 265,
     WHILE = 266,
     DO = 267,
-    CMP = 268,
-    OP = 269
+    BEG = 268,
+    END = 269,
+    CMP = 270,
+    OP = 271
   };
 #endif
 
@@ -76,7 +78,7 @@ union YYSTYPE
  struct symlist *sl;
  int fn; /* which function */
 
-#line 80 "LeFun.tab.h"
+#line 82 "LeFun.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;
